@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/tapr-2023-equipe1-carro-dotnet.props" />
+</Project>
