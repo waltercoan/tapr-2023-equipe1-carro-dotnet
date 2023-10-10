@@ -29,3 +29,14 @@ dotnet watch --launch-profile https
 dotnet add package Azure.Identity
 dotnet add package Microsoft.EntityFrameworkCore.Cosmos
 ```
+
+## CosmosDB
+- [Introdução](https://learn.microsoft.com/en-us/azure/cosmos-db/introduction)
+- [Databases, containers, and items](https://learn.microsoft.com/en-us/azure/cosmos-db/resource-model)
+
+
+### Configuração RBAC de permissão
+```
+az cosmosdb sql role assignment create --account-name COSMOSDBACCOUNT --resource-group GRUPODERECURSO --role-assignment-id 00000000-0000-0000-0000-000000000002 --role-definition-name "Cosmos DB Built-in Data Contributor" --scope "/" --principal-id GUIDUSUARIOAD
+```
+
