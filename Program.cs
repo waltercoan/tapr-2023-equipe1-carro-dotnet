@@ -1,4 +1,5 @@
 using tapr_2023_equipe1_carro_dotnet.Models;
+using tapr_2023_equipe1_carro_dotnet.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RepositoryDbContext>();
+builder.Services.AddScoped<ICarroService,CarroService>();
 
 var app = builder.Build();
 
