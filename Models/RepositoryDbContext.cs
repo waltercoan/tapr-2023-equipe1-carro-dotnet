@@ -1,4 +1,5 @@
 using Azure.Identity;
+using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
 
@@ -18,7 +19,8 @@ public class RepositoryDbContext : DbContext
         optionsBuilder.UseCosmos(
             accountEndpoint: _configuration["CosmosDBURL"],
             tokenCredential: new DefaultAzureCredential(),
-            databaseName: _configuration["CosmosDBDBName"]);
+            databaseName: _configuration["CosmosDBDBName"],
+            options => { options.ConnectionMode(ConnectionMode.Gateway); });
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

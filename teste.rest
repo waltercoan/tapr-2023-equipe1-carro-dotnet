@@ -1,1 +1,26 @@
+### Buscar todos os carros
 GET http://localhost:5202/api/v1/carro
+
+### Buscar carro pelo ID
+GET http://localhost:5202/api/v1/carro/3f840c63-130c-436b-8543-97ab14caf16f
+
+### Inserir um novo Carro
+POST http://localhost:5202/api/v1/carro
+Content-Type: application/json
+
+{
+  "placa": "MAS1334"
+}
+
+### Atualizar o  Carro
+PUT http://localhost:5202/api/v1/carro/be122a6f-885d-4b2d-a3e1-63aa0485c8bb
+Content-Type: application/json
+
+{
+  "placa": "MAS1334",
+  "modelo": "Fiat UNO"
+}
+
+### Remover o Carro
+DELETE  http://localhost:5202/api/v1/carro/be122a6f-885d-4b2d-a3e1-63aa0485c8bb
+Content-Type: application/json
