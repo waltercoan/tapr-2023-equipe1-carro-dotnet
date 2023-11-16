@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RepositoryDbContext>();
 builder.Services.AddScoped<ICarroService,CarroService>();
+builder.Services.AddScoped<IClienteService,ClienteService>();
 
 var app = builder.Build();
 

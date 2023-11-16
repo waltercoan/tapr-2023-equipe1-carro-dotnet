@@ -24,3 +24,35 @@ Content-Type: application/json
 ### Remover o Carro
 DELETE  http://localhost:5202/api/v1/carro/be122a6f-885d-4b2d-a3e1-63aa0485c8bb
 Content-Type: application/json
+
+
+
+
+
+### Buscar todos os clientes
+GET http://localhost:5202/api/v1/cliente
+
+### Buscar cliente pelo ID
+GET http://localhost:5202/api/v1/cliente/af7b63da-f452-4760-bc7e-af112dc49b0f
+
+### Inserir um novo cliente
+POST http://localhost:5202/api/v1/cliente
+Content-Type: application/json
+
+{
+  "nome": "zezinho",
+  "endereco": "Rua lalala 100"
+}
+
+### Atualizar o cliente
+PUT http://localhost:5202/api/v1/cliente/af7b63da-f452-4760-bc7e-af112dc49b0f
+Content-Type: application/json
+
+{
+  "nome": "zezinho",
+  "endereco": "Rua lalala 200"
+}
+
+### Remover o cliente
+DELETE  http://localhost:5202/api/v1/cliente/af7b63da-f452-4760-bc7e-af112dc49b0f
+Content-Type: application/json

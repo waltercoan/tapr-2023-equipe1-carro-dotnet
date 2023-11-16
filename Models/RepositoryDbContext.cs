@@ -8,6 +8,7 @@ namespace tapr_2023_equipe1_carro_dotnet.Models;
 public class RepositoryDbContext : DbContext
 {
     public DbSet<Carro> Carros {get;set;}
+    public DbSet<Cliente> Clientes {get;set;}
     private IConfiguration _configuration;
     public RepositoryDbContext(IConfiguration configuration)
     {
@@ -33,7 +34,17 @@ public class RepositoryDbContext : DbContext
             .Property(p => p.id)
             .HasValueGenerator<GuidValueGenerator>();
         modelBuilder.Entity<Carro>()
-            .HasPartitionKey(o => o.placa);
+            .HasPartitionKey(o => o.id);
+
+        modelBuilder.Entity<Cliente>()
+            .HasNoDiscriminator();
+        modelBuilder.Entity<Cliente>()
+            .ToContainer("cliente");
+        modelBuilder.Entity<Cliente>()
+            .Property(p => p.id)
+            .HasValueGenerator<GuidValueGenerator>();
+        modelBuilder.Entity<Cliente>()
+            .HasPartitionKey(o => o.id);
         
     }
 }

@@ -4,6 +4,6 @@ public class Carro
 {
     public Guid id {get;set;}
     public string placa {get;set;}
-    public string modelo {get;set;}
-
+    public Modelo modelo {get;set;}
+    public string ClienteId { get; set; }
 }

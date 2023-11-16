@@ -1,5 +1,8 @@
 # tapr-2023-equipe1-carro-dotnet
 
+![Diagrama](diagramas/tapr-microsservico2023.png "Diagrama")
+- [Diagrama](diagramas/tapr-microsservico2023.vsdx)
+
 ## Autenticação no AZURE
 [DOC](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt)
 
@@ -255,3 +258,20 @@ public async Task<IResult> Delete(string id){
 DELETE  http://localhost:5202/api/v1/carro/be122a6f-885d-4b2d-a3e1-63aa0485c8bb
 Content-Type: application/json
 ```
+
+## Chaves de partição
+- [DOC: Particionamento](https://learn.microsoft.com/en-us/azure/cosmos-db/partitioning-overview)
+- Correção da classe RepositoryDbContext.cs
+```
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        //...
+        modelBuilder.Entity<Carro>()
+            .HasPartitionKey(o => o.id);
+        
+    }
+```
+
+## Modelagem de bancos de dados NoSQL
+- [DOC: Modelagem de dados](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/modeling-data)
+
