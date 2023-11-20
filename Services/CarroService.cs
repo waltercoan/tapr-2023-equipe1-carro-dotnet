@@ -1,3 +1,4 @@
+using Dapr.Client;
 using Microsoft.EntityFrameworkCore;
 using tapr_2023_equipe1_carro_dotnet.Models;
 
@@ -6,9 +7,15 @@ namespace tapr_2023_equipe1_carro_dotnet.Services;
 public class CarroService : ICarroService
 {
     private RepositoryDbContext _dbContext;
-    public CarroService(RepositoryDbContext dbContext)
+    private IConfiguration _configuration;
+    private DaprClient _daprClient;
+    public CarroService(RepositoryDbContext dbContext,
+                        IConfiguration configuration)
     {
         this._dbContext = dbContext;
+        this._configuration = configuration;
+        this._daprClient = new DaprClientBuilder().Build();
+        
     }
 
     public async Task<List<Carro>> GetAllAsync()
@@ -29,7 +36,7 @@ public class CarroService : ICarroService
         carro.id = Guid.Empty;
         await _dbContext.Carros.AddAsync(carro);
         await _dbContext.SaveChangesAsync();
-
+        await PublishUpdateAsync(carro);
         return carro;
     }
 
@@ -40,6 +47,7 @@ public class CarroService : ICarroService
             //Atualizar cada atributo do objeto antigo 
             carroAntigo.modelo = carro.modelo;
             await _dbContext.SaveChangesAsync();
+            await PublishUpdateAsync(carroAntigo);
         }
         return carroAntigo;
     }
@@ -51,6 +59,12 @@ public class CarroService : ICarroService
             await _dbContext.SaveChangesAsync();
         }
         return carroAntigo;
+    }
+
+    private async Task PublishUpdateAsync(Carro carro){
+        await this._daprClient.PublishEventAsync(_configuration["AppComponentService"], 
+                                                _configuration["AppComponentTopicCarro"], 
+                                                carro);
     }
 
 }

@@ -1,0 +1,8 @@
+version: 1
+common:
+  resourcesPath: ./components/
+apps:
+  - appID: tapr-2023-equipe1-carro-dotnet
+    appDirPath: .
+    appPort: 5202
+    command: ["dotnet", "run", "--configuration","Release"]

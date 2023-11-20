@@ -9,4 +9,5 @@ public interface IClienteService
     Task<Cliente> saveNewAsync(Cliente cliente);
     Task<Cliente> updateAsync(String id, Cliente cliente);
     Task<Cliente> DeleteAsync(String id);
+    Task<Cliente> updateEventAsync(Cliente cliente);
 }

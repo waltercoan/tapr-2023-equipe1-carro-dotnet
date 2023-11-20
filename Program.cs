@@ -1,5 +1,6 @@
 using tapr_2023_equipe1_carro_dotnet.Models;
 using tapr_2023_equipe1_carro_dotnet.Services;
+using Dapr;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,10 @@ builder.Services.AddScoped<ICarroService,CarroService>();
 builder.Services.AddScoped<IClienteService,ClienteService>();
 
 var app = builder.Build();
+
+app.UseCloudEvents();
+
+app.MapSubscribeHandler();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using tapr_2023_equipe1_carro_dotnet.Models;
 using tapr_2023_equipe1_carro_dotnet.Services;
+using Dapr;
+
 
 namespace tapr_2023_equipe1_carro_dotnet.Controllers;
 
@@ -9,6 +11,7 @@ namespace tapr_2023_equipe1_carro_dotnet.Controllers;
 public class ClienteController : ControllerBase
 {
     private IClienteService _service;
+    private IConfiguration _configuration;
     public ClienteController(IClienteService service)
     {
         this._service = service;
@@ -66,6 +69,18 @@ public class ClienteController : ControllerBase
         { 
             return Results.NotFound();
         }
+
+        return Results.Ok(Cliente);
+    }
+    
+    [Topic(pubsubName:"servicebus-pubsub",name:"topico-equipe-0-cliente")] 
+    [HttpPost("/event")]
+    public async Task<IResult> UpdateClient(Cliente Cliente){      
+        if(Cliente == null){
+            return Results.BadRequest();
+        }
+        Console.WriteLine("EVENT" + Cliente.Nome);
+        await _service.updateEventAsync(Cliente);
 
         return Results.Ok(Cliente);
     }

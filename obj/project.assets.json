@@ -38,6 +38,119 @@
           "lib/netstandard2.0/Azure.Identity.dll": {}
         }
       },
+      "Dapr.AspNetCore/1.12.0": {
+        "type": "package",
+        "dependencies": {
+          "Dapr.Client": "1.12.0",
+          "System.IO.Pipelines": "4.7.2"
+        },
+        "compile": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Dapr.AspNetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Dapr.Client/1.12.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Api.CommonProtos": "2.2.0",
+          "Google.Protobuf": "3.15.0",
+          "Grpc.Net.Client": "2.52.0",
+          "System.Net.Http.Json": "5.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Dapr.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Dapr.Client.dll": {}
+        }
+      },
+      "Google.Api.CommonProtos/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "[3.13.0, 4.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Api.CommonProtos.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Api.CommonProtos.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Google.Protobuf/3.15.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Protobuf.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Protobuf.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.52.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.52.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Common": "2.52.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.3"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.Net.Client.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.Client.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.52.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.52.0"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.Net.Common.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.Common.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/7.0.9": {
         "type": "package",
         "dependencies": {
@@ -1170,6 +1283,15 @@
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         }
       },
+      "System.IO.Pipelines/4.7.2": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {}
+        }
+      },
       "System.Linq/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1278,6 +1400,15 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.Net.Http.Json/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/System.Net.Http.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/System.Net.Http.Json.dll": {}
         }
       },
       "System.Net.Primitives/4.3.0": {
@@ -2086,6 +2217,132 @@
         "azure.identity.nuspec",
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll"
+      ]
+    },
+    "Dapr.AspNetCore/1.12.0": {
+      "sha512": "OZRVjXoZ3lBq+PDD9mGpuBjHEii8Q/JdiHXKMyqvm+NYX9PbyAfs0qzMKgb7x81soY5kA7iwPGw8/3H+EpCWqg==",
+      "type": "package",
+      "path": "dapr.aspnetcore/1.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dapr.aspnetcore.1.12.0.nupkg.sha512",
+        "dapr.aspnetcore.nuspec",
+        "images/logo-transparent.png",
+        "lib/net6.0/Dapr.AspNetCore.dll"
+      ]
+    },
+    "Dapr.Client/1.12.0": {
+      "sha512": "GyEiu3a7Y6g+YMtKlF1kptGVplOYuD3dxJNLNLCiq2TlLAGqPEBS6KFnfdhmrwQQrzozrPvFwu53W525ZVIUEQ==",
+      "type": "package",
+      "path": "dapr.client/1.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dapr.client.1.12.0.nupkg.sha512",
+        "dapr.client.nuspec",
+        "images/logo-transparent.png",
+        "lib/net6.0/Dapr.Client.dll"
+      ]
+    },
+    "Google.Api.CommonProtos/2.2.0": {
+      "sha512": "mxXNYkHYL7T6NG8cdbodxpixQZfpozBkZj2g+jGCB/sO13RqfUvh9YHd8G2QI5HP24brl+nILJReC3/gzgsrrg==",
+      "type": "package",
+      "path": "google.api.commonprotos/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.api.commonprotos.2.2.0.nupkg.sha512",
+        "google.api.commonprotos.nuspec",
+        "lib/net461/Google.Api.CommonProtos.dll",
+        "lib/net461/Google.Api.CommonProtos.pdb",
+        "lib/netstandard2.0/Google.Api.CommonProtos.dll",
+        "lib/netstandard2.0/Google.Api.CommonProtos.pdb"
+      ]
+    },
+    "Google.Protobuf/3.15.0": {
+      "sha512": "2na7LsYrtxkEQaVCNjaafBzVu4IJ4U4+dwwBazK8oUkpDiIFjO0GkyTc+IbStx4xNVAV4EqHl+qp2uegFgFiiA==",
+      "type": "package",
+      "path": "google.protobuf/3.15.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.15.0.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb"
+      ]
+    },
+    "Grpc.Core.Api/2.52.0": {
+      "sha512": "SQiPyBczG4vKPmI6Fd+O58GcxxDSFr6nfRAJuBDUNj+PgdokhjWJvZE/La1c09AkL2FVm/jrDloG89nkzmVF7A==",
+      "type": "package",
+      "path": "grpc.core.api/2.52.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.core.api.2.52.0.nupkg.sha512",
+        "grpc.core.api.nuspec",
+        "lib/net462/Grpc.Core.Api.dll",
+        "lib/net462/Grpc.Core.Api.pdb",
+        "lib/netstandard1.5/Grpc.Core.Api.dll",
+        "lib/netstandard1.5/Grpc.Core.Api.pdb",
+        "lib/netstandard2.0/Grpc.Core.Api.dll",
+        "lib/netstandard2.0/Grpc.Core.Api.pdb",
+        "lib/netstandard2.1/Grpc.Core.Api.dll",
+        "lib/netstandard2.1/Grpc.Core.Api.pdb",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Client/2.52.0": {
+      "sha512": "hWVH9g/Nnjz40ni//2S8UIOyEmhueQREoZIkD0zKHEPqLxXcNlbp4eebXIOicZtkwDSx0TFz9NpkbecEDn6rBw==",
+      "type": "package",
+      "path": "grpc.net.client/2.52.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.net.client.2.52.0.nupkg.sha512",
+        "grpc.net.client.nuspec",
+        "lib/net5.0/Grpc.Net.Client.dll",
+        "lib/net5.0/Grpc.Net.Client.pdb",
+        "lib/net6.0/Grpc.Net.Client.dll",
+        "lib/net6.0/Grpc.Net.Client.pdb",
+        "lib/net7.0/Grpc.Net.Client.dll",
+        "lib/net7.0/Grpc.Net.Client.pdb",
+        "lib/netstandard2.0/Grpc.Net.Client.dll",
+        "lib/netstandard2.0/Grpc.Net.Client.pdb",
+        "lib/netstandard2.1/Grpc.Net.Client.dll",
+        "lib/netstandard2.1/Grpc.Net.Client.pdb",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Common/2.52.0": {
+      "sha512": "di9qzpdx525IxumZdYmu6sG2y/gXJyYeZ1ruFUzB9BJ1nj4kU1/dTAioNCMt1VLRvNVDqh8S8B1oBdKhHJ4xRg==",
+      "type": "package",
+      "path": "grpc.net.common/2.52.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.net.common.2.52.0.nupkg.sha512",
+        "grpc.net.common.nuspec",
+        "lib/net5.0/Grpc.Net.Common.dll",
+        "lib/net5.0/Grpc.Net.Common.pdb",
+        "lib/net6.0/Grpc.Net.Common.dll",
+        "lib/net6.0/Grpc.Net.Common.pdb",
+        "lib/net7.0/Grpc.Net.Common.dll",
+        "lib/net7.0/Grpc.Net.Common.pdb",
+        "lib/netstandard2.0/Grpc.Net.Common.dll",
+        "lib/netstandard2.0/Grpc.Net.Common.pdb",
+        "lib/netstandard2.1/Grpc.Net.Common.dll",
+        "lib/netstandard2.1/Grpc.Net.Common.pdb",
+        "packageIcon.png"
       ]
     },
     "Microsoft.AspNetCore.OpenApi/7.0.9": {
@@ -4083,6 +4340,28 @@
         "system.io.filesystem.primitives.nuspec"
       ]
     },
+    "System.IO.Pipelines/4.7.2": {
+      "sha512": "rGIIhoY3lUdn9rWeuGdgeZZ0P+SpJ1wZI5g8TnXqgvuhFgUP7iP9Nt5FZebYInQZQxqnwjPxdYYBE5l/8PJmqQ==",
+      "type": "package",
+      "path": "system.io.pipelines/4.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.IO.Pipelines.dll",
+        "lib/netcoreapp3.0/System.IO.Pipelines.dll",
+        "lib/netstandard1.3/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "ref/net461/System.IO.Pipelines.dll",
+        "ref/netcoreapp2.0/System.IO.Pipelines.dll",
+        "system.io.pipelines.4.7.2.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Linq/4.3.0": {
       "sha512": "5DbqIUpsDp0dFftytzuMmc0oeMdQwjcP/EWxsksIz/w1TcFRkZ3yKKz0PqiYFMmEwPSWw+qNVqD7PJ889JzHbw==",
       "type": "package",
@@ -4245,6 +4524,25 @@
         "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
         "system.net.http.4.3.0.nupkg.sha512",
         "system.net.http.nuspec"
+      ]
+    },
+    "System.Net.Http.Json/5.0.0": {
+      "sha512": "3CPSQpCzEmI9o+1G79TnPCjF40omCdnoXj2Rg76BDwGj5+LZnFPjV+t35eedlvl+uthmholk/XXxXTYgJWSexw==",
+      "type": "package",
+      "path": "system.net.http.json/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Net.Http.Json.dll",
+        "lib/net5.0/System.Net.Http.Json.dll",
+        "lib/netstandard2.0/System.Net.Http.Json.dll",
+        "system.net.http.json.5.0.0.nupkg.sha512",
+        "system.net.http.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Net.Primitives/4.3.0": {
@@ -5814,6 +6112,8 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Azure.Identity >= 1.10.1",
+      "Dapr.AspNetCore >= 1.12.0",
+      "Dapr.Client >= 1.12.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Cosmos >= 7.0.11",
       "Swashbuckle.AspNetCore >= 6.5.0"
@@ -5860,6 +6160,14 @@
           "Azure.Identity": {
             "target": "Package",
             "version": "[1.10.1, )"
+          },
+          "Dapr.AspNetCore": {
+            "target": "Package",
+            "version": "[1.12.0, )"
+          },
+          "Dapr.Client": {
+            "target": "Package",
+            "version": "[1.12.0, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",

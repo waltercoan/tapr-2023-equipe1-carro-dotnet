@@ -53,4 +53,16 @@ public class ClienteService : IClienteService
         }
         return clienteAntigo;
     }
+
+    public async Task<Cliente> updateEventAsync(Cliente cliente)
+    {
+        var clienteAntigo = await _dbContext.Clientes.Where(c => c.id.Equals(cliente.id)).FirstOrDefaultAsync();
+        if (clienteAntigo == null){
+            await _dbContext.Clientes.AddAsync(cliente);
+            await _dbContext.SaveChangesAsync();
+        }else{
+            await updateAsync(cliente.id.ToString(),cliente);
+        }
+        return cliente;
+    }
 }

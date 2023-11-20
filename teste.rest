@@ -9,7 +9,12 @@ POST http://localhost:5202/api/v1/carro
 Content-Type: application/json
 
 {
-  "placa": "MAS1334"
+  "placa": "MAS1334",
+  "ClienteId": "1",
+  "modelo": {
+    "descricao": "",
+    "marca": ""
+  }
 }
 
 ### Atualizar o  Carro
